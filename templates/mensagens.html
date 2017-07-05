@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projeto ONG</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--<link rel="stylesheet" href="assets/css/main.css" /> -->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{{url_for('frontPage')}}" class="logo">
+									<span class="symbol"><img src="{{url_for('static', filename = 'images/logo.svg')}}" alt="" /></span><span class="title"><font color = #000000>Projeto ONG</font><font color=#D50000>42</font></span>
+								</a>
+								<p>by <a href="https://www.facebook.com/bogarimorg/">Bogarim</a></p>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{{url_for('frontPage')}}">Home</a></li>
+							<li><a href="{{url_for('listaOrganizacoes')}}">Organizações</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Mensagens</h1>
+							</header>
+
+							<section>
+							
+							{% for msg in mensagens %}
+							<blockquote>
+								<p>From: {{ msg.nome}}</p>
+								<p><a href="mailto: {{ msg.email }}">{{ msg.email}}</a></p>
+								<p>{{ msg.message}}</p>
+							</blockquote>
+							{% endfor %}
+
+							</section>
+
+														
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; Arthur Grangeiro de Souza. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<!--<img src="{{url_for('static', filename = 'pic01.jpg')}}" alt="" />-->
+			
+			<script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/skel.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/util.js')}}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+
+	</body>
+</html>

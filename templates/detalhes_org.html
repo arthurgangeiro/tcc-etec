@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projeto ONG</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--<link rel="stylesheet" href="assets/css/main.css" /> -->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{{url_for('frontPage')}}" class="logo">
+									<span class="symbol"><img src="{{url_for('static', filename = 'images/logo.svg')}}" alt="Logo do projeto" /></span><span class="title"><font color = #000000>Projeto ONG</font><font color=#D50000>42</font></span>
+								</a>
+								<p>by <a href="https://www.facebook.com/bogarimorg/">Bogarim</a></p>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{{url_for('frontPage')}}">Home</a></li>
+							<li><a href="{{url_for('listaOrganizacoes')}}">Organizações</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>{{ organizacao.nomefantasia }}</h1>
+								
+								{% with verified = organizacao.ativo %}
+								{% if verified == "1" %}
+								
+								{% if organizacao.doacao != "#" %}
+								<p><a href="{{ organizacao.doacao }}" target="_blank" class="button">Doar</a></p>
+								{% endif %}
+
+								{% else %}
+								<p> (Organização não verificada) </p>
+
+								{% endif %}
+								{% endwith %}
+
+							</header>
+
+							<div class="box alt">
+
+							{% with path = organizacao.imagem %}
+								<div class="row uniform">
+								{% if organizacao.ativo == "1" %}
+									<div class="12u$"><span class="image fit"><img src="{{url_for('static', filename = path)}}" alt="Imagem da ONG" /></span></div>
+								{% else %}
+									<div class="12u$"><span class="image fit"><img src="{{url_for('static', filename = 'images/default_image.png')}}" alt="Imagem default. Apenas cores." /></span></div>
+								{% endif %}
+								</div>
+								<br />
+							{% endwith %}
+							</div>
+								
+							{% with verified = organizacao.ativo %}
+							{% if verified == "1" %}
+							<ul class="icons">
+									<li><a href="{{ organizacao.facebook }}" target="_blank" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="{{ organizacao.site }}" target="_blank" class="icon style2 fa-dribbble"><span class="label">Site</span></a></li>
+									<li><a href="mailto:{{ organizacao.email }}" target="_blank" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							{% endif %}
+							{% endwith %}
+
+							<br />
+							<section>
+							<div class="table-wrapper">
+										<table>
+											<tbody>
+												<tr>
+													<td>CNPJ</td>
+													<td>{{ organizacao.cnpj }}</td>
+												</tr>
+												<tr>
+													<td>Razão Social</td>
+													<td>{{ organizacao.razaosocial}}</td>
+												</tr>
+												<tr>
+													<td>Nome Fantasia</td>
+													<td>{{ organizacao.nomefantasia }}</td>
+												</tr>
+												<tr>
+													<td>Representante</td>
+													<td>{{ organizacao.representante }}</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</section>
+								<br />
+
+								<section>
+									<h3>Descrição</h3>
+									<blockquote>{{ organizacao.descricao}}</blockquote>
+								</section>
+			
+								<br />
+								<section>
+								<h2>Contato</h2>
+								
+									<div class="table-wrapper">
+										<table class="alt">
+											<tbody>
+												<tr>
+													<td>E-mail</td>
+													<td><a href="mailto:{{ organizacao.email }}" target="_blank">{{ organizacao.email }}</td>
+												</tr>
+												{% with verified = organizacao.ativo %}
+												{% if verified == "1" %}
+												<tr>
+													<td>Facebook</td>
+													<td><a href="{{ organizacao.facebook}}" target="_blank">{{ organizacao.facebook}}</a></td>
+												</tr>
+												<tr>
+													<td>Site</td>
+													<td><a href="{{ organizacao.site }}" target="_blank">{{ organizacao.site }}</a></td>
+												</tr>
+												<tr>
+													<td>Telefone</td>
+													<td>{{ organizacao.telefone }}</td>
+												</tr>
+												{% endif %}
+												{% endwith %}
+											</tbody>
+										</table>
+									</div>
+									
+								
+							</section>
+
+
+
+						
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Siga nossas Redes Sociais</h2>
+								<ul class="icons">
+									<li><a href="https://www.facebook.com/bogarimorg/"  target="_blank" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Arthur Grangeiro de Souza. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<!--<img src="{{url_for('static', filename = 'pic01.jpg')}}" alt="" />-->
+			
+			<script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/skel.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/util.js')}}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+
+	</body>
+</html>

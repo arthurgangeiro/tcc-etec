@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projeto ONG</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--<link rel="stylesheet" href="assets/css/main.css" /> -->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{{url_for('frontPage')}}" class="logo">
+									<span class="symbol"><img src="{{url_for('static', filename = 'images/logo.svg')}}" alt="" /></span><span class="title"><font color = #000000>Projeto ONG</font><font color=#D50000>42</font></span>
+								</a>
+								<p>by <a href="https://www.facebook.com/bogarimorg/">Bogarim</a></p>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{{url_for('frontPage')}}">Home</a></li>
+							<li><a href="{{url_for('listaOrganizacoes')}}">Organizações</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Cadastrar Nova Organização</h1>
+								<p>*Esse é apenas um pré-cadastro. A Organização poderá ser vista pelos usuários porém não estará disponível para receber doações.</p>
+							</header>
+
+							<section>
+								<br />
+								<h2>Cadastro</h2>
+								<form method="POST" action="{{url_for('newOrganizacao')}}">
+									
+									<div class="field">
+									<br />
+									<h3>Sobre a Organização</h3>
+									</div>
+
+									<!-- Cadastrar CNPJ -->
+									<div class="field half first">
+										<input type="text" name="cnpj" id="cnpj" placeholder="CNPJ" minlength="14" maxlength="18" />
+									</div>
+									<!-- Nome oficial da empresa, o que esta no cartorio-->
+									<div class="field half">
+										<input type="text" name="razaosocial" id="razao" placeholder="Razão Social" />
+									</div>
+									<!-- Nome pelo qual a empresa e conhecida -->
+									<div class="field half first">
+										<input type="text" name="nomefantasia" id="nome" placeholder="Nome Fantasia" />
+									</div>
+
+									<!-- Nome de uma responsavel pela empresa -->
+									<div class="field half">
+										<input type="text" name="representante" id="representante" placeholder="Representante" />
+									</div>
+
+									<div class="field">
+									<br />
+									<h3>Informações de Contato</h3>
+									</div>
+
+									<!-- Email para contato -->
+									<div class="field half first">
+										<input type="email" name="email" id="email" placeholder="E-mail" />
+									</div>
+									<!-- Telefone -->
+									<div class="field half">
+										<input type="text" name="telefone" id="telefone" placeholder="Telefone" />
+									</div>
+									<!-- Endereco -->
+									<div class="field">
+										<input type="text" name="endereco" id="endereco" placeholder="Endereco" />
+									</div>
+									<!-- Site -->
+									<div class="field half first">
+										<input type="text" name="site" id="site" placeholder="Web site" />
+									</div>
+									<!-- Facebook -->
+									<div class="field half">
+										<input type="text" name="facebook" id="facebook" placeholder="Facebook" />
+									</div>
+
+									
+									<div class="field">
+									<br />
+									<h3>Informações Institucionais</h3>
+									</div>
+									
+									<!-- Descricao rapida da ONG-->
+									<div class="field">
+										<input type="text" name="sobre" id="sobre" placeholder="Descrição rápida" minlength="10" maxlength="145" />
+									</div>
+									<!-- Descricao completa do que faz a ong-->
+									<div class="field">
+										<textarea name="descricao" id="descricao" placeholder="Descrição completa" minlength="45"  maxlength="999" ></textarea>
+									</div>
+									<!-- Codigo para editar as informacoes -->
+									<div class="field half first">
+										<input type="text" name="codigo" id="codigo" placeholder="Codigo de Edição" />
+									</div>
+
+									<div class="field half">
+										<p>* Quando você quiser fazer alguma edição nos dados cadastrados deverá utilizar esse cógido. Código válido apenas para uma Organização.</p>
+									</div>
+									<!-- -->
+									<ul class="actions">
+										<li><input type="submit" value="Enviar" class="special" /></li>
+									</ul>
+								</form>
+							</section>
+														
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Siga nossas Redes Sociais</h2>
+								<ul class="icons">
+									<li><a href="https://www.facebook.com/bogarimorg/" target="_blank" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Arthur Grangeiro de Souza. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<!--<img src="{{url_for('static', filename = 'pic01.jpg')}}" alt="" />-->
+			
+			<script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/skel.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/util.js')}}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+
+	</body>
+</html>

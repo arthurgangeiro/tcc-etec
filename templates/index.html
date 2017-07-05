@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projeto ONG</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--<link rel="stylesheet" href="assets/css/main.css" /> -->
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="{{url_for('frontPage')}}" class="logo">
+									<span class="symbol"><img src="{{url_for('static', filename = 'images/logo.svg')}}" alt="" /></span><span class="title"><font color = #000000>Projeto ONG</font><font color=#D50000>42</font></span>
+								</a>
+								<p>by <a href="https://www.facebook.com/bogarimorg/">Bogarim</a></p>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="{{url_for('frontPage')}}">Home</a></li>
+							<li><a href="{{url_for('listaOrganizacoes')}}">Organizações</a></li>
+							<li><a href="#sobre">Sobre</a></li>
+							<li><a href="#equipe">Equipe</a></li>
+							<li><a href="#contato">Contato</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>Bem vindo ao Projeto ONG 42! Aqui você encontra organizações éticas, idôneas e que contam com sua ajuda para continuar existindo.</h1>
+								<p>Encontre, conheça, ajude e acompanhe Organizações que compartilham os mesmos príncipios e anseios que você. O Mundo pode ser um lugar melhor, vamos juntos fazer isso acontecer.</p>
+							</header>
+
+							<!--MESSAGE FLASHING EXAMPLE -->
+							{% with messages = get_flashed_messages() %}
+							{% if messages %}
+
+							<ul>
+							{% for message in messages %}
+							  <li><strong>{{message}}</strong></li>
+							  {% endfor %}
+							</ul>
+							{% endif %}
+							{% endwith %}
+
+							<div class="box alt">
+										<div class="row uniform">
+											<div class="12u$"><span class="image fit"><img src="{{url_for('static', filename = 'images/picV.png')}}" alt="Imagem de muda de planta sobre um tronco de árvore." /></span></div>
+										</div>
+									</div>
+									<a name = "sobre"></a>
+									<hr />
+									<br />
+									<h3>Como o Projeto ONG 42 funciona?</h3>
+									<p><span class="image left"><img src="{{url_for('static', filename = 'images/curioso.jpg')}}"alt="" /></span>O ONG 42 é um agregador de ONGs. Nós vamos até as ONGs, avaliamos o trabalho de cada uma delas e, se estiver de acordo com nossos padrões adicionamos na plataforma. Isso feito a ONG pode ser facilmente encontrada por qualquer pessoa e receber doações. Nosso compromisso com os usuário é garantir que seu dinheiro será bem utilizado. Nossa missão com as ONGs é dar-lhes mais visibilidade e ajudar na captação de recursos.</p>
+									<br /><br />
+
+									<h3>O que é uma ONG?</h3>
+									<p><span class="image right"><img src="{{url_for('static', filename = 'images/gatinhos.jpg')}}" alt="" /></span>Uma ONG (Organização Não Governamental) é uma entidade comprometida com uma determinada causa. É um projeto político, uma interferência direta na sociedade. ONGs existem para ajudar as pessoas a participar da sociedade. Uma ONG permite que pessoas se juntem e lutem por uma causa, seja ela ambiental, social ou humanitária. Simples ou complexa essa causa será abraçada por pessoas que a tem em alta conta e estão dispostas a dedicar tempo e esforço para que seja alcançada.</p>
+
+									<br /><br />
+									<h3>Como faço para cadastrar uma ONG no projeto?</h3>
+									<p><span class="image left"><img src="{{url_for('static', filename = 'images/pracima.jpg')}}" alt="" /></span>Se você possui ou conhece alguma ONG que gostaria de ver na plataforma envia um email para betelguese@ong42.com.br informando e-mail, telefone, endereço e nome do responsável, ou preencha o formulário de contato, que entraremos em contato para agendar uma visita e realizar os procedimento necessários. Caso você não cumpra algum dos nossos requisitos não desanime, iremos te ajudar, nosso objetivo é te ajudar a ser cada vez melhor e maior.</p>
+
+									<br />
+						<a name = "equipe"></a>
+						<hr />
+
+						<br />
+						<h2>Nosso Time</h2>
+
+
+							<section class="tiles">
+								<article class="style1">
+									<span class="image">
+										<img src="{{url_for('static', filename = 'images/arthur.png')}}" alt="Self de Arthur, usando camisa social e uma expressão de dúvida." />
+									</span>
+									<a href="https://www.linkedin.com/in/arthurgrangeiro/" target="_blank">
+										<h2>Arthur Grangeiro</h2>
+										<div class="content">
+											<p>Técnico de informática em produção e viciado em livros.</p>
+										</div>
+									</a>
+								</article>
+
+								<article class="style1">
+									<span class="image">
+										<img src="{{url_for('static', filename = 'images/luana.png')}}" alt="Self da Luana utilizando, por meio de montagem, orelhas e bigodes de gato." />
+									</span>
+									<a href="https://www.linkedin.com/in/luana-manfredi/" target="_blank">
+										<h2>Luana Manfredi</h2>
+										<div class="content">
+											<p>Futura técnica em informática e viciada em gatinhos.</p>
+										</div>
+									</a>
+								</article>
+
+								<article class="style1">
+									<span class="image">
+										<img src="{{url_for('static', filename = 'images/vinicios.png')}}" alt="Self do Vinicios com sombrancelha levantada, usando colete e gravata." />
+									</span>
+									<a href="https://www.facebook.com/vinicios.freitas.549" target="_blank">
+										<h2>Vinicios Freitas</h2>
+										<div class="content">
+											<p>Estudante de informática e especialista em gravatas.</p>
+										</div>
+									</a>
+								</article>
+								
+							</section>
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<a name = "contato"></a>
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Fale conosco</h2>
+								<form method="post" action="{{url_for('frontPage')}}">
+									<div class="field half first">
+										<input type="text" name="name" id="name" placeholder="Nome" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Mensagem"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Enviar" class="special" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Siga nossas Redes Sociais</h2>
+								<ul class="icons">
+									<li><a href="https://www.facebook.com/bogarimorg/" target="_blank" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Arthur Grangeiro de Souza. All rights reserved</li><li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<!--<img src="{{url_for('static', filename = 'pic01.jpg')}}" alt="" />-->
+			
+			<script src="{{url_for('static', filename = 'js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/skel.min.js')}}"></script>
+			<script src="{{url_for('static', filename = 'js/util.js')}}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{{url_for('static', filename = 'js/main.js')}}"></script>
+
+	</body>
+</html>
