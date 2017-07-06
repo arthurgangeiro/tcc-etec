@@ -1,3 +1,10 @@
+__author__ = "Arthur Grangeiro de Souza"
+__credits__ = ["Arthur Grangeiro de Souza"]
+__version__ = "0.9.1"
+__maintainer__ = "Arthur Grangeiro de Souza"
+__email__ = "arthurgrangeiro@outlook.com"
+__status__ = "Prototype"
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 

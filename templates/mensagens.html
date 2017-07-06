@@ -8,6 +8,8 @@
 	<head>
 		<title>Projeto ONG</title>
 		<meta charset="utf-8" />
+		<meta name="author" content="Arthur Grangeiro, Luana Manfredi, Vinicios Freitas">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--<link rel="stylesheet" href="assets/css/main.css" /> -->
@@ -21,14 +23,13 @@
 
 				<!-- Header -->
 					<header id="header">
-						<div class="inner">
+						<link rel="icon" href="{{url_for('static', filename = 'images/favicon.png')}}" type="image/png" sizes="16x16">
 
 							<!-- Logo -->
 								<a href="{{url_for('frontPage')}}" class="logo">
-									<span class="symbol"><img src="{{url_for('static', filename = 'images/logo.svg')}}" alt="" /></span><span class="title"><font color = #000000>Projeto ONG</font><font color=#D50000>42</font></span>
+									<span class="symbol"><img src="{{url_for('static', filename = 'images/favicon.png')}}" alt="" /></span><span class="title"><font color = #000000>Projeto ONG</font><font color=#D50000>42</font></span>
 								</a>
 								<p>by <a href="https://www.facebook.com/bogarimorg/">Bogarim</a></p>
-
 							<!-- Nav -->
 								<nav>
 									<ul>
@@ -75,7 +76,7 @@
 					<footer id="footer">
 						<div class="inner">
 							<ul class="copyright">
-								<li>&copy; Arthur Grangeiro de Souza. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Bogarim Team. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>
